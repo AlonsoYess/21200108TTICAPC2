@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "150206229012",
+    "project_id": "pc02ttica",
+    "storage_bucket": "pc02ttica.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:150206229012:android:ede195efcb5fd7c579d501",
+        "android_client_info": {
+          "package_name": "com.example.pc02"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYjR6pvbniTfkKblmtlR6ptQuxePbQeyQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
