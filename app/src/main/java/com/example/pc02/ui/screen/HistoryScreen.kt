@@ -19,6 +19,24 @@ fun HistoryScreen(onBack: () -> Unit) {
     Column(Modifier.padding(16.dp)) {
         Button(onClick = onBack) { Text("Volver") }
         Spacer(Modifier.height(8.dp))
+        @Composable
+        fun HistoryScreen(onBack: () -> Unit) {
+            val vm: ConvertViewModel = viewModel()
+            val history by vm.history.collectAsState()
+            LaunchedEffect(Unit) { vm.loadHistory() }
+
+            Column(Modifier.padding(16.dp)) {
+                Button(onClick = onBack) { Text("Volver") }
+                Spacer(Modifier.height(8.dp))
+                // **Añade esto** para ver cuántos items trae:
+                Text("Items en historial: ${history.size}")
+                Spacer(Modifier.height(8.dp))
+
+                LazyColumn {
+                    items(history) { c -> /* tu Card… */ }
+                }
+            }
+        }
         LazyColumn {
             items(history) { c ->
                 Card(

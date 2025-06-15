@@ -54,10 +54,14 @@ class ConvertViewModel : ViewModel() {
         val user = auth.currentUser ?: return
         db.collection("conversions")
             .whereEqualTo("uid", user.uid)
-            .orderBy("timestamp", Query.Direction.DESCENDING)
+            // .orderBy("timestamp", Query.Direction.DESCENDING) // temporalmente coméntalo
             .get()
             .addOnSuccessListener { snap ->
+
                 _history.value = snap.toObjects(Conversion::class.java)
+            }
+            .addOnFailureListener { e ->
+                
             }
     }
 }
